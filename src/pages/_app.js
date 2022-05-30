@@ -1,11 +1,11 @@
+import { useEffect } from "react";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  const publicVapidKey =
-    "BNBEafQfNJIbFDkGO8NGrv2R-M8Gq36xkleSym3nqDXCPTbYnXQ2hnLpuQ5DV8Al-pe4j_mXd258KxAkTIk067k";
-
   async function registerServiceWorker() {
-    const register = await navigator.serviceWorker.register("./worker.js", {
+    const publicVapidKey =
+      "BLNSBQ2KPnD_FIA2BzeJH3EfViLV76CJbsgsaJcuLaIGotcLHf0iY2qY1duSxD0DOS-aRpU19IBmKJBloIEZ9io";
+    const register = await navigator.serviceWorker.register("/worker.js", {
       scope: "/",
     });
 
@@ -21,8 +21,13 @@ function MyApp({ Component, pageProps }) {
         "Content-Type": "application/json",
       },
     });
+
+    console.log("working");
   }
-  registerServiceWorker();
+
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
 
   return <Component {...pageProps} />;
 }

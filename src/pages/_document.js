@@ -15,10 +15,6 @@ class MyDocument extends Document {
           <meta name="description" content="Aamar taka " />
           <meta name="keywords" content="Personal load, Car loan, DPS" />
           <meta name="author" content="Amar Taka" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
         </Head>
         <body>
           <Main />
