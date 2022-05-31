@@ -12,7 +12,7 @@ const User = () => {
         <meta name="keywords" content="User Data, User info" />
         <meta name="author" content="Nizam" />
       </header> */}
-      <main>
+      <main className="user">
         <h1>This is User Page</h1>
       </main>
     </div>

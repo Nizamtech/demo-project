@@ -16,4 +16,7 @@ module.exports = withPWA({
     sw: "/service-worker.js",
     //...
   },
+  images: {
+    domains: ["cdn.pixabay.com"],
+  },
 });

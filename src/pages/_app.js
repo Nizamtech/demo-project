@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Navbar from "../Components/navbar";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -14,22 +15,27 @@ function MyApp({ Component, pageProps }) {
       applicationServerKey: publicVapidKey,
     });
 
-    await fetch("http://localhost:3000/api/notification", {
-      method: "POST",
-      body: JSON.stringify(subscription),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // await fetch("http://localhost:3000/api/notification", {
+    //   method: "POST",
+    //   body: JSON.stringify(subscription),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
 
     console.log("working");
   }
 
   useEffect(() => {
-    registerServiceWorker();
+    // registerServiceWorker();
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Navbar />
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;
