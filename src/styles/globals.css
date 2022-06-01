@@ -49,3 +49,15 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.picCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.picMainCard {
+  margin: 5px;
+  padding: 5px;
+}

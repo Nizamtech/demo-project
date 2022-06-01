@@ -53,7 +53,7 @@ try {
     "about",
     "contactForm",
     "app",
-
+    "pic",
     // `any url`, // Alias for index.html
   ];
 

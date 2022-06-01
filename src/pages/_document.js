@@ -5,6 +5,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+          />
           <meta name="application-name" content="PWA App" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
@@ -97,10 +101,6 @@ class MyDocument extends Document {
           <meta name="description" content="Aamar taka " />
           <meta name="keywords" content="Personal load, Car loan, DPS" />
           <meta name="author" content="Amar Taka" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-          />
         </Head>
         <body>
           <Main />

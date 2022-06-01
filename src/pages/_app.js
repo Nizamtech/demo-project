@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       scope: "/",
     });
 
-    if (register.active.state === "activated") {
+    if (register.active) {
       const subscription = await register.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: publicVapidKey,
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    // registerServiceWorker();
+    registerServiceWorker();
   }, []);
 
   return (

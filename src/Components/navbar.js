@@ -17,6 +17,9 @@ const Navbar = () => {
         <Link href="/app">
           <a>App</a>
         </Link>
+        <Link href="/pic">
+          <a>Picture</a>
+        </Link>
         <Link href="/about">
           <a>About</a>
         </Link>
