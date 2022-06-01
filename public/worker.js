@@ -2,12 +2,12 @@ self.addEventListener("install", (e) => {
   console.log("Service worker : install");
 });
 
-// self.addEventListener("push", function (e) {
-//   const data = e.data.json();
-//   self.registration.showNotification(data.title, {
-//     body: data.body,
-//   });
-// });
+self.addEventListener("push", function (e) {
+  const data = e.data.json();
+  self.registration.showNotification(data.title, {
+    body: data.body,
+  });
+});
 
 self.addEventListener("activate", (event) => {
   console.log("Service worker activating...");

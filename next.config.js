@@ -17,6 +17,6 @@ module.exports = withPWA({
     //...
   },
   images: {
-    domains: ["cdn.pixabay.com"],
+    domains: ["cdn.pixabay.com", "rickandmortyapi.com"],
   },
 });

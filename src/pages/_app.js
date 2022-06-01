@@ -10,24 +10,38 @@ function MyApp({ Component, pageProps }) {
       scope: "/",
     });
 
-    const subscription = await register.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: publicVapidKey,
-    });
+    if (register.active.state === "activated") {
+      const subscription = await register.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: publicVapidKey,
+      });
 
-    // await fetch("http://localhost:3000/api/notification", {
-    //   method: "POST",
-    //   body: JSON.stringify(subscription),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-
-    console.log("working");
+      await fetch("/api/notification", {
+        method: "POST",
+        body: JSON.stringify(subscription),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).catch((rejected) => {
+        console.log(rejected);
+      });
+    }
   }
 
   useEffect(() => {
-    // registerServiceWorker();
+    if ("serviceWorker" in navigator) {
+      console.log("service worker Found");
+      navigator.serviceWorker
+        .register("/worker.js")
+        .then(function (registration) {
+          console.log("Registered:", registration);
+        })
+        .catch(function (error) {
+          console.log("Registration failed: ", error);
+        });
+    }
+
+    registerServiceWorker();
   }, []);
 
   return (
