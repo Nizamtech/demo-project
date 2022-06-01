@@ -9,6 +9,11 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
+        <link rel="manifest" href="/manifest.json"></link>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
       </Head>
 
       <main className={styles.main}>

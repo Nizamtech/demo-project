@@ -29,19 +29,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      console.log("service worker Found");
-      navigator.serviceWorker
-        .register("/worker.js")
-        .then(function (registration) {
-          console.log("Registered:", registration);
-        })
-        .catch(function (error) {
-          console.log("Registration failed: ", error);
-        });
-    }
-
-    registerServiceWorker();
+    // registerServiceWorker();
   }, []);
 
   return (
